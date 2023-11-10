@@ -94,4 +94,23 @@ type cardDetails = cardNumber & cardDate  & {
 user1.email = "roshanshrestha@gmail.com"
 // user1._id = "123" 
 
+
+// UNION
+let score : number | string = 33;
+score = 23
+score = "ten"
+
+type GameUser={
+    id:number,
+    name:string,
+
+}
+
+type Admin = {
+    username:string,
+    id:number
+}
+
+
+
 export {}
