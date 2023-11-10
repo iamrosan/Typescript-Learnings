@@ -48,6 +48,16 @@ function handleError(err:string):never{ // it doesn't return value uses for robo
 
 
 
+// OBjects
+const User = {
+    name:"roshan",
+    email:"roshan@gmail.com",
+    isActive : true,
+}
+
+function createUser({name:string,isActive:boolean}):{}{
+    return {fname:"Roshan", lname:"Stha"}
+}
 
 
 
