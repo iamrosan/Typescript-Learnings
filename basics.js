@@ -50,3 +50,8 @@ var user1 = {
     isActive: false
 };
 user1.email = "roshanshrestha@gmail.com";
+// user1._id = "123" 
+// UNION
+var score = 33;
+score = 23;
+score = "ten";

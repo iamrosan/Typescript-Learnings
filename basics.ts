@@ -112,5 +112,24 @@ type Admin = {
 }
 
 
+let myName : GameUser | Admin = {id:8, name:"Roshan"};
+
+function getDetailsById(id:number|string){
+    if(typeof id === "string"){
+        id.toLocaleUpperCase();
+    }else if (typeof id === "number"){
+        id += 2
+    }
+    console.log("User Id is "+ id)
+}
+
+getDetailsById(10)
+
+// Array
+const data : number[] =[1,2,3]
+const data2 : string[]=["1","2","3"]
+const data3 : (string|number)[] =[1,2,"1","2"]
+
+
 
 export {}
