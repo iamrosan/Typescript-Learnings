@@ -130,6 +130,17 @@ const data : number[] =[1,2,3]
 const data2 : string[]=["1","2","3"]
 const data3 : (string|number)[] =[1,2,"1","2"]
 
+// tuples
+let user22 : [string, number, boolean]
+
+user22 = ["Roshan",8, false] 
+
+let rgb : [number, number, number] = [255,255,255]
+
+type UserType = [number, string]
+const newUser : UserType = [12, "Roshan"]
+newUser[0]=8
+
 
 
 export {}
