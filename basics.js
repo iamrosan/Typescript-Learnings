@@ -33,3 +33,20 @@ function consoleError(err) {
 function handleError(err) {
     throw new Error(err);
 }
+// OBjects
+var User = {
+    name: "roshan",
+    email: "roshan@gmail.com",
+    isActive: true,
+};
+function createUser(_a) {
+    var string = _a.name, boolean = _a.isActive;
+    return { fname: "Roshan", lname: "Stha" };
+}
+var user1 = {
+    _id: "123",
+    name: "Roshan",
+    email: "r@gmail.com",
+    isActive: false
+};
+user1.email = "roshanshrestha@gmail.com";

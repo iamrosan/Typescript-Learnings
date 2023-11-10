@@ -60,7 +60,38 @@ function createUser({name:string,isActive:boolean}):{}{
 }
 
 
+// type
+type User1 = {
+    readonly _id: string,  // id of the user do not changes read only property
+    name:string,
+    email:string,
+    isActive:boolean
+    creditCardDetails?:number
+}
 
 
+let user1 : User1 ={
+    _id:"123",
+    name:"Roshan",
+    email:"r@gmail.com",
+    isActive:false
+}
+
+type cardNumber = {
+    cardNumber:string
+}
+
+type cardDate = {
+    cardDate:string
+}
+
+type cardDetails = cardNumber & cardDate  & {
+    cvv:number
+}
+
+
+
+user1.email = "roshanshrestha@gmail.com"
+// user1._id = "123" 
 
 export {}
