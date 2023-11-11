@@ -8,6 +8,7 @@ const ButtonComponent = ({
   endIcon,
   label,
   onClick,
+  ...otherProps
 }) => {
   return (
     <>
@@ -17,6 +18,7 @@ const ButtonComponent = ({
         endIcon={endIcon || null}
         onClick={onClick}
         size={size}
+        {...otherProps}
       >
         {label}
       </Button>
