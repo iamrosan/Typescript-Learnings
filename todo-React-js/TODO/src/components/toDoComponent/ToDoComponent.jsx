@@ -2,6 +2,7 @@ import React from "react";
 import ButtonComponent from "../shared/ButtonComponent";
 import FileHeadingComponent from "../shared/FileHeadingComponent";
 import TextFieldComponent from "../shared/TextFieldComponent";
+import CheckBoxComponent from "../shared/CheckBoxComponent";
 
 const ToDoComponent = () => {
   return (
@@ -13,6 +14,12 @@ const ToDoComponent = () => {
         label={"Click me"}
         size={"small"}
       />
+      <ButtonComponent
+        variant={"contained"}
+        label={"Click you"}
+        size={"small"}
+      />
+      <CheckBoxComponent label={"hello"} />
     </>
   );
 };
