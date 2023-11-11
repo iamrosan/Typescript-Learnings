@@ -4,7 +4,6 @@ import React from "react";
 const TextFieldComponent = ({
   label,
   value,
-  defaultValue,
   name,
   type,
   error,
@@ -23,13 +22,14 @@ const TextFieldComponent = ({
         component="form"
         noValidate
         autoComplete="off"
-        width={width || "25ch"}
+        sx={{
+          "& > :not(style)": { m: 1, width: { width } },
+        }}
       >
         <TextField
           error={error}
           label={label}
           value={value}
-          defaultValue={defaultValue || null}
           name={name}
           type={type}
           helperText={error ? helperText : null}
