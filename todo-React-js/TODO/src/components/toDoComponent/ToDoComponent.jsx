@@ -78,7 +78,15 @@ const ToDoComponent = () => {
     <>
       <FileHeadingComponent title={"TODO"} />
 
-      <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        position="sticky"
+        top={0}
+        zIndex={1000}
+        bgcolor="white" //
+      >
         <TextFieldComponent
           label={"Enter TO DO"}
           variant={"outlined"}
