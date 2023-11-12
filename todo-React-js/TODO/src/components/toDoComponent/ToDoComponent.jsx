@@ -4,7 +4,7 @@ import FileHeadingComponent from "../shared/FileHeadingComponent";
 import TextFieldComponent from "../shared/TextFieldComponent";
 import CheckBoxComponent from "../shared/CheckBoxComponent";
 import { Box } from "@mui/material";
-import { VerifiedIcon } from "@mui/icons-material";
+import { Verified, Delete, AddCircle } from "@mui/icons-material";
 import { v4 as uuidv4 } from "uuid";
 
 const ToDoComponent = () => {
@@ -54,11 +54,39 @@ const ToDoComponent = () => {
     setTodo(changedTodo);
   };
 
+  const handleFinishBtn = (id) => {
+    const updatedTodos = todo?.map((t) => {
+      if (id === t.id) {
+        return {
+          ...t,
+          isComplete: true,
+          checked: true,
+        };
+      } else {
+        return t;
+      }
+    });
+    setTodo(updatedTodos);
+  };
+
+  const handleDeleteBtn = (id) => {
+    const updatedTodo = todo?.filter((t) => t.id !== id);
+    setTodo(updatedTodo);
+  };
+
   return (
     <>
       <FileHeadingComponent title={"TODO"} />
 
-      <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        position="sticky"
+        top={0}
+        zIndex={1000}
+        bgcolor="white" //
+      >
         <TextFieldComponent
           label={"Enter TO DO"}
           variant={"outlined"}
@@ -74,13 +102,14 @@ const ToDoComponent = () => {
           size={"medium"}
           sx={{ height: "100%" }}
           onClick={handleAddButton}
+          endIcon={<AddCircle />}
         />
       </Box>
 
       <Box>
         {todo?.map((curTodo) => {
           return (
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"} justifyContent={"center"} marginBottom={2}>
               <Box
                 display={"flex"}
                 flexDirection={"row"}
@@ -104,16 +133,19 @@ const ToDoComponent = () => {
                 >
                   <ButtonComponent
                     variant={"contained"}
+                    label={"Complete"}
                     size={"medium"}
                     sx={{ height: "100%" }}
-                    onClick={handleAddButton}
-                    startIcon={<VerifiedIcon />}
+                    onClick={() => handleFinishBtn(curTodo.id)}
+                    endIcon={<Verified />}
                   />
                   <ButtonComponent
                     variant={"contained"}
+                    label={"delete"}
                     size={"medium"}
                     sx={{ height: "100%" }}
-                    onClick={handleAddButton}
+                    onClick={() => handleDeleteBtn(curTodo.id)}
+                    endIcon={<Delete />}
                   />
                 </Box>
               </Box>
